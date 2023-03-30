@@ -6,7 +6,9 @@ function App() {
   const API_KEY = "553b395b17def710a9edd9944684aaf6";
   const [location, setlocation] = useState('');
   const [result, setresult] = useState({}); // 빈오브젝트 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&lang=kr&units=metric`;
+  const temp = result.data.main.temp
+  const realTemp = temp / 1.8 - 32
 
   const serachWeather = async(e) => {
     if(e.key ==='Enter') {
