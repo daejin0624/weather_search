@@ -8,8 +8,10 @@ function App() {
   const [result, setresult] = useState({}); // 빈오브젝트 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&lang=kr&units=metric`;
 
+
   const serachWeather = async(e) => {
     if(e.key === 'Enter') {
+
       try {
         const data = await axios({
           method: 'get',
